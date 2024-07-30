@@ -7,25 +7,34 @@ app = Flask(__name__)
 abertura = [
     "Querida Larissa,",
     "Minha amada Larissa,",
-    "Minha princesa",
-    "Minha vida",
-    "Minha musa",
-    "Minha luz",
-    "Com todo carinho",
-    "Com todo meu amor",
-    "Meu amor,"
+    "Minha princesa,",
+    "Minha vida,",
+    "Minha musa,",
+    "Minha luz,",
+    "Com todo carinho,",
+    "Com todo meu amor,",
+    "Meu amor,",
+    "Minha eterna paixão,",
+    "Minha querida,",
+    "Minha razão de viver,"
 ]
 
 introducao = [
-    "Não há palavras suficientes no mundo para expressar o quanto eu te amo e o quanto você signfica para mim.",
+    "Não há palavras suficientes no mundo para expressar o quanto eu te amo e o quanto você significa para mim.",
     "Desde o momento em que nos conhecemos, minha vida mudou para melhor.",
     "Desde o instante em que nossos caminhos se cruzaram, eu percebi que havia encontrado algo verdadeiramente raro e precioso.",
     "Cada dia ao seu lado é uma nova aventura, e eu sou grato por ter você ao meu lado.",
     "Sua presença é como um campo de margaridas na primavera, simples e delicado, mas carregado de uma beleza que ilumina o mundo ao seu redor.",
     "Você é a razão do meu sorriso e da minha felicidade.",
     "Você é um presente tão especial que me parece um sonho.",
-    "Às vezes me pego apenas te admirando, perdido em pensamentos sobre como Deus foi bondoso comigo em unir nosso caminhos e propósitos.",
-    "Nada neste vasto cosmos pode chegar aos pés da sua beleza. Sua essência é única e inigualável."
+    "Às vezes me pego apenas te admirando, perdido em pensamentos sobre como Deus foi bondoso comigo em unir nossos caminhos e propósitos.",
+    "Nada neste vasto cosmos pode chegar aos pés da sua beleza. Sua essência é única e inigualável.",
+    "Desde que te conheci, minha vida tem sido um mar de felicidade e amor.",
+    "Cada momento ao seu lado é um presente que agradeço todos os dias.",
+    "Você trouxe luz e alegria para a minha vida de uma maneira que eu nunca imaginei possível.",
+    "Você é a pessoa mais especial que já conheci, e sou eternamente grato por ter você ao meu lado.",
+    "Te encontrar foi como encontrar um tesouro que eu nem sabia que estava procurando.",
+    "Cada dia ao seu lado é um novo capítulo em nossa linda história de amor."
 ]
 
 desenvolvimento = [
@@ -38,20 +47,33 @@ desenvolvimento = [
     "Você é minha razão de viver, prometo que sempre estarei aqui.",
     "Sua presença traz luz e alegria para minha vida de uma maneira que ninguém consegue.",
     "Seu carinho e apoio são o que me motivam todos os dias, e eu sou eternamente grato por isso.",
-    "Seus olhos, que brilham com uma luz própria, têm o poder de ofuscar o brilho dos astros, ornando-os meros espectadores da verdadeira majestade que é você."
+    "Você é minha inspiração diária, e cada momento ao seu lado é uma bênção.",
+    "Seu sorriso ilumina meus dias, e sua voz é a melodia que acalma meu coração.",
+    "Você é a pessoa que eu sempre sonhei em encontrar, e eu te amo mais a cada dia.",
+    "Cada dia ao seu lado é um presente que eu agradeço todos os dias.",
+    "Você faz a minha vida ser mais bonita e cheia de amor.",
+    "Seu amor é a força que me guia e me dá coragem para enfrentar qualquer desafio.",
+    "Você é a razão pela qual eu acordo todos os dias com um sorriso no rosto.",
+    "Seu carinho e ternura fazem com que cada dia ao seu lado seja um sonho."
 ]
 
 conclusao = [
     "Estou ansioso para todos os momentos que ainda temos pela frente.",
     "Vamos continuar construindo memórias maravilhosas juntos.",
     "Você é meu tudo, e mal posso esperar para passar o resto da minha vida ao seu lado.",
-    "Você é a razão pela qual eu acordo todos os dias com um sorriso, e a certeza de que, ao seu lado.",
+    "Você é a razão pela qual eu acordo todos os dias com um sorriso, e a certeza de que, ao seu lado, tudo é possível.",
     "Eu mal posso esperar para ver o que o futuro nos reserva.",
     "Juntos, podemos superar qualquer obstáculo e alcançar qualquer sonho.",
     "Eu te amo mais do que palavras podem expressar.",
     "Obrigado por ser a luz da minha vida.",
     "Você é e sempre será o amor da minha vida.",
-    "Nossa história de amor está apenas começando, e eu estou animado para ver o que vem a seguir."
+    "Nossa história de amor está apenas começando, e eu estou animado para ver o que vem a seguir.",
+    "Você é meu companheiro de vida, e juntos, somos invencíveis.",
+    "O amor que sinto por você cresce a cada dia, e mal posso esperar para ver onde essa jornada nos levará.",
+    "Com você ao meu lado, sinto que posso enfrentar qualquer desafio que a vida nos apresente.",
+    "Obrigado por ser a pessoa maravilhosa que você é e por compartilhar sua vida comigo.",
+    "Cada momento ao seu lado é uma bênção, e eu sou grato por cada segundo.",
+    "O futuro é brilhante porque eu tenho você ao meu lado."
 ]
 
 encerramento = [
@@ -61,41 +83,36 @@ encerramento = [
     "Com amor eterno, Kevyn",
     "Sempre seu, Kevyn",
     "Com todo meu carinho, Kevyn",
-    "Amorosamente, Kevyn"
+    "Amorosamente, Kevyn",
+    "Com amor infinito, Kevyn",
+    "Seu para sempre, Kevyn",
+    "Com todo meu coração, Kevyn",
+    "Para sempre seu, com amor, Kevyn",
+    "Com toda a minha devoção, Kevyn"
 ]
-
-# Função para gerar um parágrafo variado
-def gerar_paragrafo(tipo):
-    if tipo == 'introducao':
-        return random.choice(introducao)
-    elif tipo == 'desenvolvimento':
-        return random.choice(desenvolvimento)
-    elif tipo == 'conclusao':
-        return random.choice(conclusao)
-    else:
-        return ""
 
 # Função para gerar o texto da carta
 def gerar_texto_variado(num_paragrafos):
     texto_final = []
-    
+
     # Adiciona a frase de abertura
     texto_final.append(random.choice(abertura))
-    
+
     # Gera os parágrafos
-    for i in range(num_paragrafos):
-        if i % 3 == 0:
-            tipo_paragrafo = 'introducao'
-        elif i % 3 == 1:
-            tipo_paragrafo = 'desenvolvimento'
+    paragrafos = []
+    for _ in range(num_paragrafos):
+        if len(paragrafos) % 3 == 0:
+            paragrafos.extend(random.sample(introducao, 1))
+        elif len(paragrafos) % 3 == 1:
+            paragrafos.extend(random.sample(desenvolvimento, 1))
         else:
-            tipo_paragrafo = 'conclusao'
-        
-        texto_final.append(gerar_paragrafo(tipo_paragrafo))
-    
+            paragrafos.extend(random.sample(conclusao, 1))
+
+    texto_final.extend(paragrafos)
+
     # Adiciona a frase de encerramento
     texto_final.append(random.choice(encerramento))
-    
+
     return "\n\n".join(texto_final)
 
 # Função para gerar uma carta personalizada

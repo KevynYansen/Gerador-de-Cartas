@@ -100,12 +100,22 @@ def gerar_texto_variado(num_paragrafos):
 
     # Gera os parágrafos
     paragrafos = []
+    ultimo_tipo = None
+
     for _ in range(num_paragrafos):
-        if len(paragrafos) % 3 == 0:
+        tipo_paragrafo = random.choice(['introducao', 'desenvolvimento', 'conclusao'])
+        
+        # Garantir que não haja repetições consecutivas
+        while tipo_paragrafo == ultimo_tipo:
+            tipo_paragrafo = random.choice(['introducao', 'desenvolvimento', 'conclusao'])
+
+        ultimo_tipo = tipo_paragrafo
+
+        if tipo_paragrafo == 'introducao':
             paragrafos.extend(random.sample(introducao, 1))
-        elif len(paragrafos) % 3 == 1:
+        elif tipo_paragrafo == 'desenvolvimento':
             paragrafos.extend(random.sample(desenvolvimento, 1))
-        else:
+        elif tipo_paragrafo == 'conclusao':
             paragrafos.extend(random.sample(conclusao, 1))
 
     texto_final.extend(paragrafos)

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 class="main-title">Todas para você</h1> <!-- Adicionada a classe 'main-title' -->
+    <div class="container">
+        <form action="/" method="post">
+            <button type="submit" class="heart-button">Gerar Carta</button>
+        </form>
+        <div class="media">
+            <img src="{{ url_for('static', filename='rosas.png') }}" alt="Rosas"> <!-- Alterado alt para corresponder à imagem -->
+            <audio controls>
+                <source src="{{ url_for('static', filename='Vem cá.mp3') }}" type="audio/mpeg"> <!-- Corrigido type -->
+            </audio>
+        </div>
+    </div>
+</body>
+</html>

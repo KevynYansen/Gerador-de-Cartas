@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 class="result-title">Minha Doce Amada</h1>
+    <div class="container">
+        <div class="carta" id="carta">
+            {{ carta|safe }}
+        </div>
+        <div class="media">
+            <audio controls loop>
+                <source src="{{ url_for('static', filename='Vem cá.mp3') }}" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+        <div class="new-card">
+            <button class="heart-button" onclick="gerarNovaCarta()">Gerar Nova Carta</button>
+        </div>
+    </div>
+
+    <script>
+        function gerarNovaCarta() {
+            fetch('/gerar_carta', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('carta').innerHTML = data.carta.replace(/\n/g, '<br>');
+            });
+        }
+    </script>
+</body>
+</html>

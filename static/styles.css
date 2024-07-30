@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    overflow: auto; /* Permitir rolagem se necessário */
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em; /* Tamanho grande para o título da primeira página */
+    color: #ff69b4;
+    margin: 0; /* Remover margens */
+    padding: 20px 0; /* Espaço interno para o título */
+    position: fixed; /* Fixar o título no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #f0f0f0; /* Fundo para garantir legibilidade */
+    z-index: 1000; /* Garantir que o título esteja acima de outros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionar uma leve sombra para destacá-lo */
+}
+
+.result-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em; /* Ajuste conforme necessário para a segunda página */
+    color: #ff69b4;
+    margin-top: 80px; /* Ajustar a margem para garantir visibilidade acima do container */
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 600px;
+    margin-top: 20px; /* Ajustar o espaço superior para o conteúdo não sobrepor o título */
+    position: relative; /* Permitir que o container ajuste a posição relativa ao título fixo */
+    z-index: 999; /* Garantir que o container esteja abaixo do título fixo */
+}
+
+.carta {
+    margin: 20px 0;
+    font-size: 1.7em;
+    line-height: 1.4;
+    font-family: 'Great Vibes', cursive;
+    border: 2px solid #ff69b4;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    max-height: 60vh;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Mantém os quebras de linha e espaços */
+}
+
+.heart-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.heart-button:hover {
+    background-color: #ff1493;
+    transform: scale(1.1);
+}
+
+.media {
+    margin-top: 20px;
+}
+
+.media img {
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.media audio {
+    margin-top: 10px; /* Espaço acima do áudio */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
